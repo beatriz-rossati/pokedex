@@ -1,14 +1,14 @@
 import styled from "styled-components";
 
 export const StyledPage = styled.div`
-    background-color: #9e3636;
-    min-height: 90vh;
-    height: 50vh;
+    background-color: #5E5E5E;
+    height: 90vh;
+    min-height: 1000px;
     width: 100%;
+    min-width: 1400px;
     display:flex;
     flex-direction: column;
     align-items: center;
-    flex-grow: 2;
 
     h3{
         padding: 3rem;
@@ -20,13 +20,14 @@ export const StyledPage = styled.div`
 
 export const StyledDetailsCard = styled.div`
     background-color: ${({ color }) => color};
-    width: 95%;
-    height: 78%;
+    width: 93%;
+    min-width: 1350px;
+    height: 80%;
+    min-height: 600px;
     border-radius: 38px;
     display:flex;
     align-items: center;
-    flex-grow: 0.5;
-    gap:4%;
+    gap:2.5%;
 `;
 
 export const StyledSpritesContainer = styled.div`
@@ -43,8 +44,9 @@ export const StyledSpritesContainer = styled.div`
 
     img{
         background-color: white;
-        padding:80px;
-        height: 35%;
+        padding:10%;
+        height: 45%;
+        min-height: 230px;
         border-radius: 8px;
     }
 `;
@@ -55,7 +57,7 @@ export const StyledBaseStatsContainer = styled.div`
     width: 30%;
     height: 90%;
     border-radius: 12px;
-    min-width: 470px;
+    min-width: 450px;
     border-radius: 12px;
 
     h4{
@@ -99,7 +101,7 @@ export const StyledProgressBar = styled.p`
     flex-grow: 0.60;
     border: solid gray 1px;
     border-radius: 16px;
-    width: 160px;
+    width: 110px;
     height: 24px;
 
     div{
@@ -114,7 +116,7 @@ export const StyledBasicMovesContainer = styled.div`
     color: black;
     height: 90%;
     width: 25%;
-    margin-top: 1rem;
+    margin-top: 3%;
     border-radius: 12px;
     min-width: 300px;
     justify-content: flex-end;
@@ -151,19 +153,26 @@ export const StyledTypeContainer = styled.div`
     width: 100%;
 `;
 
-export const StyledMoves = styled.div`
+export const StyledMovesContainer = styled.div`
     background-color: #ffffff;
     height: 70%;
     border-radius: 12px; 
-    padding-left: 2rem;
+    padding-left: 16px;
+    padding-right: 16px;
     overflow-y: hidden;
+    
+    section{
+        display: flex;
+        flex-wrap: wrap;
+    }
 
     p{
        font-weight: 700;
         font-size: 2rem;
         width: 100%;
-        padding-top:1.5rem;
-        padding-left: 12px;
+        padding-top:1.6rem;
+        padding-bottom: 14px;
+        padding-left: 16px;
     }
 `;
 
@@ -184,14 +193,14 @@ export const Pokeball = styled.img`
     position: absolute;
     top: 20rem;
     right: 5rem;
-    height: 100%;
+    height: 78%;
     z-index:0
 `;
 
 export const PokemonFigure = styled.img`
     z-index: 2;
     position: absolute; 
-    top: 10rem;
-    right: 5rem;
+    top: 9rem;
+    right: 4.5rem;
     width: 20%;
 `;
