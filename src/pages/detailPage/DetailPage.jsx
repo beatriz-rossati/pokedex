@@ -2,7 +2,7 @@ import React, { useContext, useEffect } from "react"
 
 import { Header } from "../../components/Header/Header"
 import { GlobalContext } from "../../context/GlobalContext"
-import { StyledPage, StyledSpritesContainer, StyledDetailsCard, Pokeball, PokemonFigure, StyledBaseStatsContainer, StyledBasicMovesContainer, StyledId, StyledName, StyledStatsName, StyledStatsValue, StyledProgressBar, StyledMoves, StyledBasic, StyledStats, Move } from "./DetailPageStyle"
+import { StyledPage, StyledSpritesContainer, StyledDetailsCard, Pokeball, PokemonFigure, StyledBaseStatsContainer, StyledBasicMovesContainer, StyledId, StyledName, StyledStatsName, StyledStatsValue, StyledProgressBar, StyledBasic, StyledStats, Move, StyledMovesContainer } from "./DetailPageStyle"
 import pokeball from "../../assets/pokeball-bg.png"
 import { StyledTypeContainer } from "../../components/PokemonCard/PokemonCardStyle"
 import { renderTypes } from "../../utils/pokemonTypeImage"
@@ -18,17 +18,17 @@ export const DetailPage = () => {
         setSelectedPokemon(JSON.parse(localStorage.getItem("selectedPokemon")))
     }, [])
 
-        const getStatsBarColor= (value)=>{
-            if (value > 100){
-                return "#002c15"
-            }if (value <= 100 && value > 70){
-                return "#14AE5C"
-            } if (value <= 70 && value > 30) {
-                return "#FFDD6A"
-            } else {
-                return "#FB7A2D"
-            }
-        };
+    const getStatsBarColor = (value) => {
+        if (value > 100) {
+            return "#002c15"
+        } if (value <= 100 && value > 70) {
+            return "#14AE5C"
+        } if (value <= 70 && value > 30) {
+            return "#FFDD6A"
+        } else {
+            return "#FB7A2D"
+        }
+    };
 
     //olhar posicionamento  da pokeballdetails* e e pokemonfigure (estão sem div tbm)
 
@@ -89,14 +89,14 @@ export const DetailPage = () => {
 
                         </StyledBasic>
 
-                        <StyledMoves>
+                        <StyledMovesContainer>
                             <p>Moves</p>
                             <section>
                                 {selectedPokemon.moves && selectedPokemon.moves.map((pokemon, id) => {
-                                    return id < 7 && <Move key={id}>{pokemon.move.name}</Move>
+                                    return id < 12 && <Move key={id}>{pokemon.move.name}</Move>
                                 })}
                             </section>
-                        </StyledMoves>
+                        </StyledMovesContainer>
 
                     </StyledBasicMovesContainer>
 
